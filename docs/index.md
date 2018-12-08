@@ -1,4 +1,4 @@
-# About Unglue
+# Unglue
 
 Frontend workflow done right.
 
