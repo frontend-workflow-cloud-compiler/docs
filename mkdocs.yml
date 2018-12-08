@@ -1,1 +1,6 @@
-site_name: My Docs
+site_name: Unglue Workflow
+nav:
+    - Home: index.md
+    - Client: client.md
+    - Server: server.md
+theme: readthedocs
