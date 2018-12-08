@@ -4,5 +4,4 @@ nav:
     - Client: client.md
     - Server: server.md
 theme:
-  name: null
-  custom_dir: 'theme/'
+  name: 'material'
