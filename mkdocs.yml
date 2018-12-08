@@ -1,7 +1,4 @@
 site_name: Unglue Workflow
-nav:
-    - Home: index.md
-    - Client: client.md
-    - Server: server.md
 theme:
-  name: 'material'
+  name: 'null'
+  custom_dir: 'theme/'
