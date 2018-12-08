@@ -3,4 +3,6 @@ nav:
   - Home: index.md
   - Client: client.md
   - Server: server.md
-theme: readthedocs
+theme:
+  name: null
+  custom_dir: 'theme/'

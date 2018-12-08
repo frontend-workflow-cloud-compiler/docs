@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+  </head>
+  <body>
+      <div class="col-md-4">
+        {% if nav|length>1 %}
+            <ul>
+            {% for nav_item in nav %}
+                {% if nav_item.children %}
+                    <li>{{ nav_item.title }}
+                        <ul>
+                        {% for nav_item in nav_item.children %}
+                            <li class="{% if nav_item.active%}current{% endif %}">
+                                <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </li>
+                {% else %}
+                    <li class="{% if nav_item.active%}current{% endif %}">
+                        <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        {% endif %}
+      </div>
+      <div class="col-md-8">
+        {{ page.content }}
+        </div>
+  </body>
+</html>
