@@ -25,7 +25,7 @@ yarn install
 
 `yarn --cwd node_modules/unglue-server/ run start`
 
-*If you want to, you can add following code to your package.json to shorten the command to yarn start:*
+*If you want to, you can add following code to your package.json to shorten the command to `yarn start`:*
 
 ```
 "scripts": {
@@ -108,9 +108,14 @@ Returns the following object:
 }
 ```
 
-
 ## Build custom server
+
+> todo
 
 ## Connect client to custom server
 
+> todo
+
 ## Run as dockerized image
+
+> todo
