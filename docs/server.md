@@ -6,18 +6,7 @@ Github: [unglue-workflow/server](https://github.com/unglue-workflow/server)
 
 ## Install
 
-### Node package
-
 `yarn add unglue-server`
-
-### Git
-
-Clone the git repository and install the dependencies.
-
-```
-git clone https://github.com/unglue-workflow/server.git unglue-server/
-yarn install
-```
 
 ## Start
 
@@ -33,9 +22,9 @@ yarn install
 }
 ```
 
-### Git
+## Connect client to custom server
 
-`yarn start`
+> todo
 
 ## Endpoints
 
@@ -108,14 +97,21 @@ Returns the following object:
 }
 ```
 
-## Build custom server
-
-> todo
-
-## Connect client to custom server
-
-> todo
-
 ## Run as dockerized image
 
-> todo
+Run the docker image. Map port 3000 to local port 3000.
+
+`docker run -d -p 3000:3000 unglue/server`
+
+You should now be able to access `https://localhost:3000`.
+
+## Install with GIT
+
+1. Clone the git repository.  
+	`git clone https://github.com/unglue-workflow/server.git unglue-server/`
+
+2. Install dependencies  
+	`yarn install`
+
+3. Start the server  
+	`yarn start`
