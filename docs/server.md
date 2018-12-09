@@ -24,7 +24,8 @@ Github: [unglue-workflow/server](https://github.com/unglue-workflow/server)
 
 ## Connect client to custom server
 
-> todo
+By default the client connects to the EC2 server instance.  
+Use the `--server=localhost:3000` client option to connect to your custom server ([#connect-to-another-server](https://unglue-docs.readthedocs.io/en/latest/client/#connect-to-another-server)).
 
 ## Endpoints
 
