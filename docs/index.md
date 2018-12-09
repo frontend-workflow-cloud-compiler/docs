@@ -4,7 +4,7 @@ Frontend workflow done right.
 
 ## Purpose
 
-Hustle free scss and js compiling in composer environment projects.
+Hustle free scss and js compiling in composer environment projects decoupling information collecting and compiling.
 
 ## Idea
 

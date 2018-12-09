@@ -1,18 +1,28 @@
 # Client
 
-Please take a look at the [getting started section](start.md) for basic setup guide.
+> **Please take a look at the [getting started section](start.md) for basic setup guide.**
 
-## How to install
+The Unglue client is responsible for reading the `.unglue` files which defines the config, find all associated files (css, js) collect the values and transmit those informatiosn to the [Server](server.md). The response from the server will then be stored in the designated files.
 
-The client [client binary](https://github.com/unglue-workflow/client) must be installed trough composer in the vendor folder.
+## Download
+
+The client [client binary](https://github.com/unglue-workflow/client) must be installed trough composer.
 
 ```sh
 composer require --dev unglue-workflow/client
 ```
 
-## The `.unglue` file
+Afterwards the bin file is available in `vendor/bin/unglue`.
 
-Add the `.unglue` files, for example `main.unglue`:
+## Unglue config file
+
+The `.unglue` files are the place where the magic happens. Depending on the file name (e.g `main.unglue`) this is what your output will look like (e.g. `main.css` and/or `main.js`). The unglue files must be stored as valid json, and currently contains the following sections:
+
++ css: An array with valid paths to scss files.
++ js: An array with valid paths to javascript files which should be compiled.
++ options: Options for the compiling request, see the configuration option section for more details.
+
+And example of an anglue file which will read a main.scss file and collect and compile a few javascript files. Also options like compress (uglify) and maps (source maps) are enabled:
 
 ```json
 {
@@ -31,7 +41,7 @@ Add the `.unglue` files, for example `main.unglue`:
 }
 ```
 
-## configuration option
+## Options
 
 ```json
 
@@ -46,13 +56,15 @@ Add the `.unglue` files, for example `main.unglue`:
 |compress|boolean|compress css and js
 |maps|boolean|generate maps file for css and js
 
-## connect to another server
+## Use another Server
 
-Run with `--server=localhost:3000`.
+Run the `watch` or `compile` commands with argument `--server=localhost:3000` in order to connect to anyother server. By default you will connect to the cloud compile server of the unglue project.
 
 ## Arguments
 
+Arguments can be added to the commands like `--server=localhost:3000` or `--timeout=20000`:
+
 |options|description|watch|compile
 |-------|-----------|-----|-------
-|--server|Define a server to connect|☑|☑
-|--timeout|The timeout in miliseconds between a next watch iteration is triggered.|☑|☐
+|`--server`|Define a server to connect|☑|☑
+|`--timeout`|The timeout in miliseconds between a next watch iteration is triggered.|☑|☐
