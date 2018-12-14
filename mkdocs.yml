@@ -6,3 +6,8 @@ nav:
   - Server: 'server.md'
 theme:
   name: 'readthedocs'
+nav:
+    - About: index.md
+    - Start: start.md
+    - Client: client.md
+    - Server: server.md
