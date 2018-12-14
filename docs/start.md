@@ -2,7 +2,7 @@
 
 Easy as 1,2,3:
 
-1. Add client binary to vendor `composer require --dev unglue/client`
+1. Add client binary to vendor `composer require unglue/client:dev-master --dev --prefer-dist`
 2. Create unglue file e.g `main.unglue` with content js and css definition as json.
 3. Run watch command `./vendor/bin/unglue watch`
 
@@ -41,7 +41,7 @@ If there are large projects or not all folders of the project should be watched 
 
 ```sh
 ./vendor/bin/unglue watch resources/
-````
+```
 
 Only compile all files once:
 
