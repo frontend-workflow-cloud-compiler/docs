@@ -11,7 +11,7 @@ Easy as 1,2,3:
 Add the `unglue/client` to the composer.json, preferred in the `require-dev` section:
 
 ```sh
-composer require --dev unglue/client
+composer require unglue/client:dev-master --dev --prefer-dist
 ```
 
 Create the `.unglue` files inside your project, for example `main.unglue`:
