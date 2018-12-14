@@ -1,8 +1,8 @@
 site_name: Unglue Workflow
+pages:
+  - About: index.md
+  - Start: start.md
+  - Client: client.md
+  - Server: server.md
 theme:
   name: 'readthedocs'
-nav:
-    - About: index.md
-    - Start: start.md
-    - Client: client.md
-    - Server: server.md
