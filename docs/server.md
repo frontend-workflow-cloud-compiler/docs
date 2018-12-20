@@ -44,8 +44,13 @@ Compiles the given scss files and runs autoprefixer. Can be compressed, sourcema
 
 Example payload:
 
+> The unglue file is in `/var/www/dist/`.  
+> 
+> The mainFiles will be concatenated in the order given. If enabled, sourcemaps will be generated.
+
 ```json
 {
+    "distFile": "main.css",
 	"mainFiles": [
 		"/var/www/src/css/lib.css",
 		"/var/www/src/scss/main.scss"
@@ -62,11 +67,8 @@ Example payload:
 			"code": "..."
 		}
 	]
-	"map": "sourcemap for code or false if options.maps false"
 }
 ```
-
-> The mainFiles will be concatenated in the order given. If enabled, sourcemaps will be generated.
 
 **Result:**
 
