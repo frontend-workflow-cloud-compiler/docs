@@ -20,16 +20,17 @@ The `.unglue` files are the place where the magic happens. Depending on the file
 
 + css: An array with valid paths to scss files.
 + js: An array with valid paths to javascript files which should be compiled.
++ svg: An array with paths to svg which should be collected and returned as single svg sprite file.
 + options: Options for the compiling request, see the configuration option section for more details.
 
 And example of an anglue file which will read a main.scss file and collect and compile a few javascript files. Also options like compress (uglify) and maps (source maps) are enabled:
 
 ```json
 {
-    "css" : [
+    "css": [
         "../../src/scss/main.scss"
     ],
-    "js" : [
+    "js": [
         "js/jquery.js",
         "js/app.js",
         "js/datepicker.js"
@@ -41,10 +42,25 @@ And example of an anglue file which will read a main.scss file and collect and c
 }
 ```
 
+## SVG-Sprites
+
+In order to generate an svg sprite from several svg sources you can use the `svg` key inside an unglue file:
+
+```json
+{
+    "svg": [
+        "icon.svg",
+        "another.svg",
+        "johndoe.svg"
+    ]
+}
+```
+
+This will create an svg file with the same name as the unglue file has.
+
 ## Options
 
 ```json
-
     "options": {
         "compress" : true,
         "maps" : true
