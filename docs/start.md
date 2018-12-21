@@ -2,7 +2,7 @@
 
 Easy as 1,2,3:
 
-1. Add client binary to vendor `composer require unglue/client:dev-master --dev --prefer-dist`
+1. Add client binary to vendor `composer require --dev unglue/client`
 2. Create unglue file e.g `main.unglue` with content js and css definition as json.
 3. Run watch command `./vendor/bin/unglue watch`
 
@@ -11,7 +11,7 @@ Easy as 1,2,3:
 Add the `unglue/client` to the composer.json, preferred in the `require-dev` section:
 
 ```sh
-composer require unglue/client:dev-master --dev --prefer-dist
+composer require --dev unglue/client
 ```
 
 Create the `.unglue` files inside your project, for example `main.unglue`:

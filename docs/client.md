@@ -9,7 +9,7 @@ The Unglue client is responsible for reading the `.unglue` files which defines t
 The client [client binary](https://github.com/unglue-workflow/client) must be installed trough composer.
 
 ```sh
-composer require --dev unglue-workflow/client
+composer require --dev unglue/client
 ```
 
 Afterwards the bin file is available in `vendor/bin/unglue`.
