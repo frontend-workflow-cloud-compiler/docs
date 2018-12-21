@@ -1,4 +1,4 @@
-# How to use
+# Getting started
 
 Easy as 1,2,3:
 

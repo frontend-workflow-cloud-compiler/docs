@@ -1,7 +1,7 @@
 site_name: Unglue Workflow
 pages:
   - About: index.md
-  - Start: start.md
+  - Getting started: start.md
   - Client: client.md
   - Server: server.md
 theme:
