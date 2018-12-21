@@ -38,9 +38,37 @@ Compiles the given scss files and runs autoprefixer. Can be compressed, sourcema
 | Name | Type | Description |
 |---|---|---|
 | distFile* | string | Name of the dist file, used for generating the correct sourcemap links. |
-| mainFile* | string | Name and path of the main `.scss` file. Used for the sass compiler as entry point. |
-| files* | array | Array of files `[{"file": "path/file.scss", "code": "code"}]`.
+| mainFiles* | string | Name and path of all files that shall be combined into one css string. Can include css or scss files. It's important that the given css/scss files are sent with code and the same file path as given in `files`. |
+| files* | array | Array of all files `[{"file": "path/file.scss", "code": "code"}]`.
 | options | object | Optional. Object with options for compilation. Default: `{"compress": true, "maps": false}` |
+
+Example payload:
+
+> The unglue file is in `/var/www/dist/`.  
+> 
+> The mainFiles will be concatenated in the order given. If enabled, sourcemaps will be generated.
+
+```json
+{
+    "distFile": "main.css",
+	"mainFiles": [
+		"/var/www/src/css/lib.css",
+		"/var/www/src/scss/main.scss"
+	],
+	"files": [
+		{
+			"file": "/var/www/src/css/lib.css",
+			"relative": "../src/css/lib.css",
+			"code": "..."
+		},
+		{
+			"file": "/var/www/src/scss/main.scss",
+			"relative": "../src/scss/main.scss",
+			"code": "..."
+		}
+	]
+}
+```
 
 **Result:**
 
@@ -115,4 +143,4 @@ You should now be able to access `https://localhost:3000`.
 	`yarn install`
 
 3. Start the server  
-	`yarn start`
+	`yarn start`2
