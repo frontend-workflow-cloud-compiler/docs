@@ -76,10 +76,12 @@ Returns the following object:
 
 ```json
 {
-	"code": "...compiled code...",
-	"map": "sourcemap for code or false if options.maps false"
+	"code": "...compiled code..."
 }
 ```
+
+> If enabled the sourcemap will be embeded into the code.
+
 
 ### `/compile/js`
 
@@ -99,10 +101,11 @@ Returns the following object:
 
 ```json
 {
-	"code": "...compiled code...",
-	"map": "sourcemap for code or false if options.maps false"
+	"code": "...compiled code..."
 }
 ```
+
+> If enabled the sourcemap will be embeded into the code.
 
 ### `/compile/svg-sprite`
 
