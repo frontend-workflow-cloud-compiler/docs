@@ -1,4 +1,4 @@
-# Unglue - Docs
+# Unglue Docs
 
 Read online: https://unglue-docs.readthedocs.io
 
