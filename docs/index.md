@@ -1,14 +1,14 @@
 # Unglue
 
-Frontend workflow done right.
+Frontend workflow done different.
 
-## Purpose
+## Purpose
 
-Hustle free scss and js compiling in composer environment projects decoupling information collecting and compiling.
+Forget the hassle of installing Node on your local system just to compile some code scss files and minify/uglify js code. A composer package which is seamless installed along with other depencies does all the job. 
 
 ## Idea
 
-Client <-> Server communcation abstracts integration layer. This allows you to either use cloud based compiling or served trough local server. Right from the vendor folder.
+An abstraction of the "collecting the data" and "process and compiling" tasks. A client binary collecting all the required content from scss, css and js files and sends everything to the server which compiles and returns the code. This allows you to either use cloud based compiling (default) or served trough local server.
 
 ## Technology
 
