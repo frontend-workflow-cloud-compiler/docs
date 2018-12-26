@@ -4,7 +4,7 @@
 
 The Unglue client is responsible for reading the `.unglue` files which defines the config, find all associated files (css, js) collect the values and transmit those informatiosn to the [Server](server.md). The response from the server will then be stored in the designated files.
 
-## Download
+## Install
 
 The client [client binary](https://github.com/unglue-workflow/client) must be installed trough composer.
 
@@ -14,7 +14,7 @@ composer require --dev unglue/client
 
 Afterwards the bin file is available in `vendor/bin/unglue`.
 
-## Unglue config file
+## Config file
 
 The `.unglue` files are the place where the magic happens. Depending on the file name (e.g `main.unglue`) this is what your output will look like (e.g. `main.css` and/or `main.js`). The unglue files must be stored as valid json, and currently contains the following sections:
 
@@ -72,7 +72,7 @@ This will create an svg file with the same name as the unglue file has.
 |compress|boolean|compress css and js
 |maps|boolean|generate maps file for css and js
 
-## Use another Server
+## Change Server
 
 Run the `watch` or `compile` commands with argument `--server=localhost:3000` in order to connect to anyother server. By default you will connect to the cloud compile server of the unglue project.
 
