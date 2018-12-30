@@ -1,6 +1,6 @@
 # Unglue Docs
 
-Read online: https://unglue-docs.readthedocs.io
+Read online: https://docs.unglue.io
 
 ## Dev
 
