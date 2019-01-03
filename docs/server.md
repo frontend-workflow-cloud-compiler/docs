@@ -146,4 +146,4 @@ You should now be able to access `https://localhost:3000`.
 	`yarn install`
 
 3. Start the server  
-	`yarn start`2
+	`yarn start`
