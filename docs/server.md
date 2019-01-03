@@ -109,7 +109,7 @@ Returns the following object:
 
 ### `/compile/svg-sprite`
 
-Combines given SVGs to a single SVG string with symbols. Can than be `use`d on the website.
+Combines given SVGs to a single SVG string with symbols. Can than be used on the website.
 
 > See [css-tricks.com](https://css-tricks.com/svg-use-with-external-reference-take-2/) for more informations.
 
