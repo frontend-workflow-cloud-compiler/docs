@@ -83,4 +83,5 @@ Arguments can be added to the commands like `--server=localhost:3000` or `--time
 |options|description|watch|compile
 |-------|-----------|-----|-------
 |`--server`|Define a server to connect|☑|☑
-|`--timeout`|The timeout in miliseconds between a next watch iteration is triggered.|☑|☐
+|`--timeout`|The timeout in miliseconds between a next watch iteration is triggered. Default is 500000|☑|☐
+|`--reindex`|After the certain amount of watch iterations the unglue client will reindex new files and check for changes in unglue files. Default is 10 (this means every $timeout * $reindex new indexing is done). If set to 0 the reindex behavior is turned off.|☑|☐
