@@ -3,7 +3,6 @@ pages:
   - About: index.md
   - Getting started: start.md
   - Client: client.md
-    - Config File: client-config.md
   - Server: server.md
 theme:
   name: 'readthedocs'
