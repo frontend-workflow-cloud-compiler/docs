@@ -1,0 +1,325 @@
+{
+  "openapi" : "3.0.0",
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/TheMaaarc/Unglue/1.0.0"
+  } ],
+  "info" : {
+    "description" : "The Unglue API",
+    "version" : "1.0.0",
+    "title" : "Unglue API",
+    "contact" : {
+      "email" : "you@your-company.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags" : [ {
+    "name" : "default",
+    "description" : "API calls"
+  } ],
+  "paths" : {
+    "/css" : {
+      "get" : {
+        "summary" : "Compiles SCSS to CSS and applies different transformations based on options.",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "files",
+          "description" : "Alle input files that will be needed for the compilation.",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "file" : {
+                  "type" : "string"
+                },
+                "relative" : {
+                  "type" : "string"
+                },
+                "code" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }, {
+          "in" : "query",
+          "name" : "distFile",
+          "description" : "The name of the dist file.",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "mainFiles",
+          "description" : "The \"entry\" .scss files (generally the ones without _ infront of their name.)",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "in" : "query",
+          "name" : "options",
+          "description" : "The options that should be used for compilation.",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "properties" : {
+              "compress" : {
+                "type" : "boolean"
+              },
+              "maps" : {
+                "type" : "boolean"
+              },
+              "css" : {
+                "type" : "object",
+                "nullable" : true,
+                "properties" : {
+                  "autoprefixer" : {
+                    "type" : "object"
+                  },
+                  "cssnano" : {
+                    "type" : "object"
+                  }
+                }
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Compiled code",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CompileResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/js" : {
+      "get" : {
+        "summary" : "Compiles, Uglifies and converts ES6 to ES5 based on options.",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "files",
+          "description" : "Alle input files that will be needed for the compilation.",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "file" : {
+                  "type" : "string"
+                },
+                "relative" : {
+                  "type" : "string"
+                },
+                "code" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }, {
+          "in" : "query",
+          "name" : "distFile",
+          "description" : "Name of the distFile, will be used for sourcemaps generation.",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "options",
+          "description" : "The options that should be used for compilation.",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "properties" : {
+              "compress" : {
+                "type" : "boolean"
+              },
+              "maps" : {
+                "type" : "boolean"
+              },
+              "js" : {
+                "type" : "object",
+                "nullable" : true,
+                "properties" : {
+                  "babel" : {
+                    "type" : "object"
+                  },
+                  "uglifyjs" : {
+                    "type" : "object"
+                  }
+                }
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Compiled code",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CompileResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/svg-sprite" : {
+      "get" : {
+        "summary" : "Transforms multiple svg files into one svg to be used with symbols.",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "files",
+          "description" : "Alle input files that will be needed for the compilation.",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "file" : {
+                  "type" : "string"
+                },
+                "relative" : {
+                  "type" : "string"
+                },
+                "code" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }, {
+          "in" : "query",
+          "name" : "options",
+          "description" : "The options that should be used for compilation.",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "properties" : {
+              "svg" : {
+                "type" : "object",
+                "nullable" : true,
+                "properties" : {
+                  "cleanDefs" : {
+                    "type" : "boolean"
+                  },
+                  "cleanSymbols" : {
+                    "type" : "boolean"
+                  },
+                  "svgAttrs" : {
+                    "type" : "string"
+                  },
+                  "symbolAttrs" : {
+                    "type" : "string"
+                  },
+                  "copyAttrs" : {
+                    "type" : "string"
+                  },
+                  "renameDefs" : {
+                    "type" : "boolean"
+                  }
+                }
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Compiled code",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CompileResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ErrorResponse" : {
+        "type" : "object",
+        "properties" : {
+          "message" : {
+            "type" : "string",
+            "example" : "Error while..."
+          },
+          "stack" : {
+            "type" : "string",
+            "example" : "Error in ../bla/.."
+          }
+        }
+      },
+      "CompileResponse" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string",
+            "example" : ".css{color:red;}"
+          },
+          "log" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "Warning..."
+            }
+          }
+        }
+      }
+    }
+  }
+}
