@@ -1,15 +1,15 @@
 {
   "openapi" : "3.0.0",
   "servers" : [ {
-    "description" : "SwaggerHub API Auto Mocking",
-    "url" : "https://virtserver.swaggerhub.com/TheMaaarc/Unglue/1.0.0"
+    "description" : "Unglue API",
+    "url" : "https://virtserver.swaggerhub.com/TheMaaarc/Unglue/1.1.1"
   } ],
   "info" : {
-    "description" : "The Unglue API",
-    "version" : "1.0.0",
+    "description" : "The Unglue API.<br />\nMore informations on <a href=\"https://unglue.io\">unglue.io</a>.\n",
+    "version" : "1.1.1",
     "title" : "Unglue API",
     "contact" : {
-      "email" : "you@your-company.com"
+      "email" : "marc@zephir.ch"
     },
     "license" : {
       "name" : "Apache 2.0",
@@ -17,13 +17,13 @@
     }
   },
   "tags" : [ {
-    "name" : "default",
-    "description" : "API calls"
+    "name" : "API Calls"
   } ],
   "paths" : {
     "/css" : {
       "get" : {
         "summary" : "Compiles SCSS to CSS and applies different transformations based on options.",
+        "tags" : [ "API Calls" ],
         "parameters" : [ {
           "in" : "query",
           "name" : "files",
@@ -84,10 +84,12 @@
                 "nullable" : true,
                 "properties" : {
                   "autoprefixer" : {
-                    "type" : "object"
+                    "type" : "object",
+                    "nullable" : true
                   },
                   "cssnano" : {
-                    "type" : "object"
+                    "type" : "object",
+                    "nullable" : true
                   }
                 }
               }
@@ -121,6 +123,7 @@
     "/js" : {
       "get" : {
         "summary" : "Compiles, Uglifies and converts ES6 to ES5 based on options.",
+        "tags" : [ "API Calls" ],
         "parameters" : [ {
           "in" : "query",
           "name" : "files",
@@ -170,10 +173,12 @@
                 "nullable" : true,
                 "properties" : {
                   "babel" : {
-                    "type" : "object"
+                    "type" : "object",
+                    "nullable" : true
                   },
                   "uglifyjs" : {
-                    "type" : "object"
+                    "type" : "object",
+                    "nullable" : true
                   }
                 }
               }
@@ -207,6 +212,7 @@
     "/svg-sprite" : {
       "get" : {
         "summary" : "Transforms multiple svg files into one svg to be used with symbols.",
+        "tags" : [ "API Calls" ],
         "parameters" : [ {
           "in" : "query",
           "name" : "files",
@@ -242,22 +248,28 @@
                 "nullable" : true,
                 "properties" : {
                   "cleanDefs" : {
-                    "type" : "boolean"
+                    "type" : "boolean",
+                    "nullable" : true
                   },
                   "cleanSymbols" : {
-                    "type" : "boolean"
+                    "type" : "boolean",
+                    "nullable" : true
                   },
                   "svgAttrs" : {
-                    "type" : "string"
+                    "type" : "string",
+                    "nullable" : true
                   },
                   "symbolAttrs" : {
-                    "type" : "string"
+                    "type" : "string",
+                    "nullable" : true
                   },
                   "copyAttrs" : {
-                    "type" : "string"
+                    "type" : "string",
+                    "nullable" : true
                   },
                   "renameDefs" : {
-                    "type" : "boolean"
+                    "type" : "boolean",
+                    "nullable" : true
                   }
                 }
               }
