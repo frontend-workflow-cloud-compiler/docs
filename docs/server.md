@@ -27,107 +27,45 @@ Github: [unglue-workflow/server](https://github.com/unglue-workflow/server)
 By default the client connects to the EC2 server instance.  
 Use the `--server=localhost:3000` client option to connect to your custom server ([#connect-to-another-server](https://unglue-docs.readthedocs.io/en/latest/client/#connect-to-another-server)).
 
-## Endpoints
+## API
 
-### `/compile/css`
+**/css:** Compiles given scss and css code and transforms the code based on the given options. By default it transforms scss to css, applies autoprefixer and minifies the code with cssnano.
 
-Compiles the given scss files and runs autoprefixer. Can be compressed, sourcemaps can be generated.
+**/js:** Compiles ES6 to ES5 code with babel and compresses es5 code with uglifyjs. The plugins can be turned on / off in the options.
 
-**Parameters:**
+**/svg-sprite:** Combines multiple svg files into one svg "sprite" to be used with symbols. See [css-tricks.com](https://css-tricks.com/svg-symbol-good-choice-icons/#article-header-id-1) for more information on how to use svg symbols.
 
-| Name | Type | Description |
-|---|---|---|
-| distFile* | string | Name of the dist file, used for generating the correct sourcemap links. |
-| mainFiles* | string | Name and path of all files that shall be combined into one css string. Can include css or scss files. It's important that the given css/scss files are sent with code and the same file path as given in `files`. |
-| files* | array | Array of all files `[{"file": "path/file.scss", "code": "code"}]`.
-| options | object | Optional. Object with options for compilation. Default: `{"compress": true, "maps": false}` |
+> You can find the full API Definition on [SwaggerHub](https://app.swaggerhub.com/apis-docs/TheMaaarc/Unglue/1.1.1). Make sure to hit "Try it out" to see all the parameters and options that are available.
 
-Example payload:
+## Options
 
-> The unglue file is in `/var/www/dist/`.  
-> 
-> The mainFiles will be concatenated in the order given. If enabled, sourcemaps will be generated.
+Some options like sourcemap or distFile options will be overwritten by the server.
 
-```json
-{
-    "distFile": "main.css",
-	"mainFiles": [
-		"/var/www/src/css/lib.css",
-		"/var/www/src/scss/main.scss"
-	],
-	"files": [
-		{
-			"file": "/var/www/src/css/lib.css",
-			"relative": "../src/css/lib.css",
-			"code": "..."
-		},
-		{
-			"file": "/var/www/src/scss/main.scss",
-			"relative": "../src/scss/main.scss",
-			"code": "..."
-		}
-	]
-}
-```
+**CSS**
 
-**Result:**
+| Plugin | Available options |
+|---|---|
+| autoprefixer | [autoprefixer options](https://github.com/postcss/autoprefixer#options) |
+| cssnano | [cssnano presets](https://cssnano.co/guides/presets) |
 
-Returns the following object:
+> You can find an example request on [SwaggerHub](https://app.swaggerhub.com/apis-docs/TheMaaarc/Unglue/1.1.1#/API%20Calls/get_css).
 
-```json
-{
-	"code": "...compiled code..."
-}
-```
+**JS**
 
-> If enabled the sourcemap will be embeded into the code.
+| Plugin | Available options |
+|---|---|
+| babel | [babel options](https://babeljs.io/docs/en/options) |
+| uglifyjs | [uglifyjs options](https://github.com/mishoo/UglifyJS2#minify-options) |
 
+> You can find an example request on [SwaggerHub](https://app.swaggerhub.com/apis-docs/TheMaaarc/Unglue/1.1.1#/API%20Calls/get_js).
 
-### `/compile/js`
+**SVG-Sprite**
 
-Combines given js files into one file. Can be compressed, can generate sourcemaps. The task will also compile ES6 to ES5 code through the babel transpiler.
+| Plugin | Available options |
+|---|---|
+| svgstore | [svgstore options](https://github.com/svgstore/svgstore#options) |
 
-**Parameters:**
-
-| Name | Type | Description |
-|---|---|---|
-| distFile* | string | Name of the dist file, used for generating the correct sourcemap links. |
-| files* | array | Array of files `[{"file": "path/file.js", "code": "code"}]`.
-| options | object | Optional. Object with options for compilation. Default: `{"compress": true, "maps": false}` |
-
-**Result:**
-
-Returns the following object:
-
-```json
-{
-	"code": "...compiled code..."
-}
-```
-
-> If enabled the sourcemap will be embeded into the code.
-
-### `/compile/svg-sprite`
-
-Combines given SVGs to a single SVG string with symbols. Can than be used on the website.
-
-> See [css-tricks.com](https://css-tricks.com/svg-use-with-external-reference-take-2/) for more informations.
-
-**Parameters:**
-
-| Name | Type | Description |
-|---|---|---|
-| files* | array | Array of files `[{"file": "path/file.svg", "code": "code"}]`.
-
-**Result:**
-
-Returns the following object:
-
-```json
-{
-	"code": "...svg sprite with each provided svg as symbol...",
-}
-```
+> You can find an example request on [SwaggerHub](https://app.swaggerhub.com/apis-docs/TheMaaarc/Unglue/1.1.1#/API%20Calls/get_svg_sprite).
 
 ## Run as dockerized image
 
@@ -146,4 +84,8 @@ You should now be able to access `https://localhost:3000`.
 	`yarn install`
 
 3. Start the server  
+<<<<<<< Updated upstream
 	`yarn start`
+=======
+	`yarn start`
+>>>>>>> Stashed changes
