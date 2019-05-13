@@ -78,14 +78,10 @@ You should now be able to access `https://localhost:3000`.
 ## Install with GIT
 
 1. Clone the git repository.  
-	`git clone https://github.com/unglue-workflow/server.git unglue-server/`
+   `git clone https://github.com/unglue-workflow/server.git unglue-server/`
 
 2. Install dependencies  
-	`yarn install`
+   `yarn install`
 
 3. Start the server  
-<<<<<<< Updated upstream
-	`yarn start`
-=======
-	`yarn start`
->>>>>>> Stashed changes
+   `yarn start`
