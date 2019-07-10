@@ -29,11 +29,11 @@ Use the `--server=localhost:3000` client option to connect to your custom server
 
 ## API
 
-**/css:** Compiles given scss and css code and transforms the code based on the given options. By default it transforms scss to css, applies autoprefixer and minifies the code with cssnano.
+**/compile/css:** Compiles given scss and css code and transforms the code based on the given options. By default it transforms scss to css, applies autoprefixer and minifies the code with cssnano.
 
-**/js:** Compiles ES6 to ES5 code with babel and compresses es5 code with uglifyjs. The plugins can be turned on / off in the options.
+**/compile/js:** Compiles ES6 to ES5 code with babel and compresses es5 code with uglifyjs. The plugins can be turned on / off in the options.
 
-**/svg-sprite:** Combines multiple svg files into one svg "sprite" to be used with symbols. See [css-tricks.com](https://css-tricks.com/svg-symbol-good-choice-icons/#article-header-id-1) for more information on how to use svg symbols.
+**/compile/svg-sprite:** Combines multiple svg files into one svg "sprite" to be used with symbols. See [css-tricks.com](https://css-tricks.com/svg-symbol-good-choice-icons/#article-header-id-1) for more information on how to use svg symbols.
 
 > You can find the full API Definition on [SwaggerHub](https://app.swaggerhub.com/apis-docs/TheMaaarc/Unglue/1.1.1). Make sure to hit "Try it out" to see all the parameters and options that are available.
 
