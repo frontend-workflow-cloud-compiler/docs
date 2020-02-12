@@ -83,7 +83,7 @@ Arguments can be added to the commands like `--server=localhost:3000` or `--time
 |options|description|watch|compile
 |-------|-----------|-----|-------
 |`--server`|Define a server to connect|☑|☑
-|`--timeout`|The timeout in miliseconds between a next watch iteration is triggered. Default is 500000|☑|☐
+|`--timeout`|The timeout in microseconds between a next watch iteration is triggered. Default is 500000 which is 0.5 seconds|☑|☐
 |`--reindex`|After the certain amount of watch iterations the unglue client will reindex new files and check for changes in unglue files. Default is 10 (this means every $timeout * $reindex new indexing is done). If set to 0 the reindex behavior is turned off.|☑|☐
 |`--symlinks`|Whether symlinks should be followed or not to find unglue and scss files (since 1.4)|☑|☑
 |`--exclude`|Exclude certain folders to find unglue files, default is `vendor/,public_html/assets/` (since 1.1)|☑|☑
