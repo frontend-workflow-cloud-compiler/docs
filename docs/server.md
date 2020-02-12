@@ -67,7 +67,7 @@ Some options like sourcemap or distFile options will be overwritten by the serve
 
 > You can find an example request on [SwaggerHub](https://app.swaggerhub.com/apis-docs/TheMaaarc/Unglue/1.1.1#/API%20Calls/get_svg_sprite).
 
-## Run as dockerized image
+## Run as dockerized image
 
 Run the docker image. Map port 3000 to local port 3000.
 
