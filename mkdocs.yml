@@ -4,5 +4,6 @@ pages:
   - Getting started: start.md
   - Client: client.md
   - Server: server.md
+  - Docker: docker.md
 theme:
   name: 'readthedocs'
