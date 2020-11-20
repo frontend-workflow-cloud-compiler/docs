@@ -67,28 +67,6 @@ Some options like sourcemap or distFile options will be overwritten by the serve
 
 > You can find an example request on [SwaggerHub](https://app.swaggerhub.com/apis-docs/TheMaaarc/Unglue/1.1.1#/API%20Calls/get_svg_sprite).
 
-## Run as dockerized image
-
-Run the docker image. Map port 3000 to local port 3000.
-
-`docker run -d -p 3000:3000 unglue/server`
-
-You should now be able to access `https://localhost:3000`.
-
-## Docker-Compose
-
-In order to create an unglue server inside a docker-compose file for local compiling:
-
-```yaml
-version: '3'
-services:
-  ...
-  unglue:
-    image: unglue/server
-    ports:
-      - "3000:3000"
-```
-
 ## Install with GIT
 
 1. Clone the git repository.  
