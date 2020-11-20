@@ -14,6 +14,8 @@ composer require --dev unglue/client
 
 Afterwards the bin file is available in `vendor/bin/unglue`.
 
+> The clinet is also availabel as phar file, this can be useful for pipelines: `wget -O unglue.phar https://github.com/unglue-workflow/client/raw/master/unglue.phar` make it executable `chmod +x unglue.phar` and run `./unglue.phar compile`.
+
 ## Config file
 
 The `.unglue` files are the place where the magic happens. Depending on the file name (e.g `main.unglue`) this is what your output will look like (e.g. `main.css` and/or `main.js`). The unglue files must be stored as valid json, and currently contains the following sections:
