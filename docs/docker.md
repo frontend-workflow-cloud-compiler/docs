@@ -34,6 +34,16 @@ unglueclient:
     - ./:/app
 ```
 
+Override client command with custom data:
+
+```yml
+unglueclient:
+    image: unglue/client:latest
+    command: ["watch", "--retry=1", "--timeout=9000000", "--server=localhost:3000"]
+    volumes:
+      - ./:/app
+```
+
 ## Docker
 
 Run the docker image. Map port 3000 to local port 3000.
