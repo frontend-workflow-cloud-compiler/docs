@@ -51,6 +51,7 @@ Only compile all files once in the resources folder:
 
 ## Using the client with a local server
 
-By default, the client connects to [v1.api.unglue.io](https://v1.api.unglue.io). If you have a bad internet connection or you don't want to send your files to our server (we don't record/save any data), you can setup the unglue server by following the *Install* and *Start* instructions in [the server documentation](server.md).
+By default, the client connects to [v1.api.unglue.io](https://v1.api.unglue.io). **The public API is limited to `16mb` body size and timeouts after `180 seconds`.**
+If you have a bad internet connection or you don't want to send your files to the public server (we don't record/save any data), you can setup the unglue server by following the *Install* and *Start* instructions in [the server documentation](server.md).
 
 After successfull setup of you own server you have to run the unglue client with the parameter `--server=<domain>:<port>` where domain and port is the address of your local server instance.
