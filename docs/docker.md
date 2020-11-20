@@ -48,6 +48,8 @@ unglueclient:
 
 Run the docker image. Map port 3000 to local port 3000.
 
-`docker run -d -p 3000:3000 unglue/server`
+```
+docker run -d -p 3000:3000 unglue/server
+```
 
 You should now be able to access `https://localhost:3000`.
