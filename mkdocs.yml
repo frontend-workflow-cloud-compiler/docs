@@ -5,5 +5,6 @@ pages:
   - Client: client.md
   - Server: server.md
   - Docker: docker.md
+  - CI: ci.md
 theme:
   name: 'readthedocs'
