@@ -11,7 +11,7 @@ Its very common to compile your dist files into a docker image while running you
     - name: unglue/server
       alias: unglue
   before_script:
-    - apt-get install wget
+    - apt-get -y update && apt-get install -y wget
     - wget -O unglue.phar https://github.com/unglue-workflow/client/raw/master/unglue.phar
     - chmod +x unglue.phar
   script:
